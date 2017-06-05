@@ -15,9 +15,18 @@ In this part of the analysis, a pre-binning of sample contigs with contigs from 
 
 ### Part 3: [Annotation of genes with KEGG orthologous groups (KOs) and counting of reads per KO](KOanalysis.md)
 Here, HMMs are used to annotate the predicted genes with KOs. The number of reads mapping to each KO in each sample are then counted for later differential analysis.
+* [161114_filter_gff_Pooled_noconta_1000.R](161114_filter_gff_Pooled_noconta_1000.R)
+* [161114_filter_gff_Pooled_noconta_1.R](161114_filter_gff_Pooled_noconta_1.R)
+* [hmmscan_addBest2gff.pl](hmmscan_addBest2gff.pl)
+* [161129_filter_prokka_Pooled_noconta_1000.R](161129_filter_prokka_Pooled_noconta_1000.R)
+* [161129_filter_prokka_Pooled_noconta_1000.R](161129_filter_prokka_Pooled_noconta_1.R)
 
 ### Part 4: [Binning of contigs into population-level genomes](binning.md)
 Contigs are binned using the [algorithm](https://git-r3lab.uni.lu/anna.buschart/MuStMultiomics/blob/master/automatic-clustering.md) developed for the [MuSt study of type 1 diabetes](https://git-r3lab.uni.lu/anna.buschart/MuStMultiomics/blob/master/automatic-clustering.md). The scripts have been adapted for use with IMP output and previous curation of contigs.
+*[fastaExtractCutRibosomal1000.pl](fastaExtractCutRibosomal1000.pl)
+*[fastaExtractCutRibosomalNoCutoff.pl](fastaExtractCutRibosomalNoCutoff.pl)
+*[160921_autoClust_noConta_evil_1000.R](160921_autoClust_noConta_evil_1000.R)
+*[160921_autoClust_noConta_evil_1000.R](160921_autoClust_noConta_evil_1000.R)
 
 ### Part 5: [Linking of population-level genomes over different samples using phylogenetic marker genes](https://git-r3lab.uni.lu/malte.herold/Linking_COSMIC_bins)
 In this step, the bins from the individual samples are [connected based on the relatedness of the phylogenetic marker genes](https://git-r3lab.uni.lu/malte.herold/Linking_COSMIC_bins).

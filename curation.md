@@ -1,4 +1,4 @@
-#Part 2: Curation of assembled contigs to remove artefactual sequences
+# Part 2: Curation of assembled contigs to remove artefactual sequences
 
 One of the challenges in analysing low-biomass samples, such as the stool samples from the first days of baby's life, is the occurence of contaminant sequences. These can come from reagents and lab ware used in the extraction and also from the reagents used for sequencing. Our own qPCR results indicated that the extraction reagents and lab ware were clean, but in the metagenomic sequencing data we observed sequences of organisms that looked very suspicious. We therefore also sequenced DNA which was extracted from human cultured cells (using exactly the same technique). These datasets did indeed also contain sequences from the same suspicious organisms and their proportion was greater, the smaller the input mass of human DNA was. 
 

@@ -1,4 +1,4 @@
-#Part 3: Annotation of genes with KEGG orthologous groups (KOs) and counting of reads per KO
+# Part 3: Annotation of genes with KEGG orthologous groups (KOs) and counting of reads per KO
 
 In this part of the workflow, we use a set of enzyme-specific HMMs to annotated the predicted protein coding genes with putative functions (in this case KOs). Two sets of scripts exist, one for samples where only contigs larger than 1000 nt were binned (and curated) and one for the samples where all contigs are curated. The examples will be shown for contigs larger than 1000 and the alternative scripts are named below.
 
@@ -9,7 +9,7 @@ Rscript 161114_filter_gff_Pooled_noconta_1000.R ${SAMPLE_NAME}
 Rscript 161129_filter_prokka_Pooled_noconta_1000.R ${SAMPLE_NAME}
 ```
 
-In the next step we use [HMMer 3.1](http://hmmer.janelia.org/) and our collection of HMMs to annotate those sequences. A small perl script is used to extract the hits from the HMMer output and add them to the new .gff files.
+In the next step we use [HMMer 3.1](http://hmmer.janelia.org/) and our collection of HMMs to annotate those sequences. A small [perl script](hmmscan_addBest2gff.pl) is used to extract the hits from the HMMer output and add them to the new .gff files.
 
 ```
 time hmmsearch --cpu 12 --noali --notextw --tblout ${SAMPLE_NAME}.prokka.NOevil.faa.kegg.hmmscan KO.hmm ${SAMPLE_NAME}.prokka.NOevil.faa >/dev/null

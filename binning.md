@@ -1,4 +1,4 @@
-#Part 4: Binning of contigs into population-level genomes
+# Part 4: Binning of contigs into population-level genomes
 
 After curation of the contigs, we want to produce the final bins. The method we employ here is the same as in our [MuSt](https://git-r3lab.uni.lu/anna.buschart/MuStMultiomics/blob/master/automatic-clustering.md), but we have tweaked it a bit to use the results of [Part 2](curation.md) to work only on the curated contigs.
 Two sets of scripts exist, one for samples where only contigs larger than 1000 nt were binned (and curated) and one for the samples where all contigs are curated. The examples will be shown for contigs larger than 1000 and the alternative scripts are named below.
