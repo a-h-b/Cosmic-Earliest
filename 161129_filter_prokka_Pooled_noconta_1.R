@@ -1,5 +1,5 @@
-#R script to remove contaminating genes from a fasta file
-# written by Linda Wampach, November 2016
+#script to remove contigs from the data set which are part of the contaminant contigs
+#written by Linda Wampach, November 2016
 
 options("encoding"="utf-8")
 library(Biostrings)
@@ -7,7 +7,8 @@ library(Biostrings)
 args<-commandArgs(TRUE)
 LIB <- args[1] #sample name
 
-gff <- read.delim(paste0(LIB,".annotation.filt.NOevilPooled.gff"),header=F,stringsAsFactors=F)
+ann_dir <- paste0(LIB,"/Analysis/annotation/")
+gff <- read.delim(paste0(ann_dir,paste0(LIB,".annotation.filt.NOevilPooled.gff")),header=F,stringsAsFactors=F)
 
 gff.short <- gsub(";.*","",gff[,9])
 gff.short.2 <- gsub("ID=","",gff.short)

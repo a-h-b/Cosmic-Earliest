@@ -4,6 +4,7 @@
 
 #this need to be set:
 contadir <- "./" #/path/to/the/directory/containing/the/results/of/binning/to/remove/contaminants/"
+cutdir <- "./" # "/path/to/the/directory/containing/the/results/of/removal/of/rRNAs/and/VizBin/"
 
 # arguments from command
 args<-commandArgs(TRUE)
@@ -78,7 +79,6 @@ muClus <- function(clusterName,cRes,resFile){
 load("results/MG_results.Rdat")
 
 #coordinates
-cutdir <- "/work/projects/ecosystem_biology/COSMIC/IMP_output/Original_cut_rRNA_data/"
 cutrRNA_coords <- read.delim(paste0(cutdir,LIB,"/",LIB,"_concat.contigs.1000.rRNAcut.fa_5mer_clr.coords"),header=F,sep=',')
 colnames(cutrRNA_coords) <- c("x","y")
 Names <- read.delim(paste0(cutdir,LIB,"/",LIB,"_concat.contigs.1000.rRNAcut.names.txt"),header=F,stringsAsFactors=F) 
