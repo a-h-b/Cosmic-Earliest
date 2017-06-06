@@ -11,11 +11,11 @@ LIB <- args[1] #sample name
 evil <- readRDS(paste0(LIB,evil_dir,"evilContigs.RDS"))
 
 ann_dir <- paste0(LIB,"/Analysis/annotation/")
-ann <- read.delim("annotation.filt.gff",header=F,stringsAsFactors=F)
+ann <- read.delim(paste0(ann_dir,"annotation.filt.gff"),header=F,stringsAsFactors=F)
 
 evil.1 <- gsub(paste0(LIB,"-"),"",evil)
 
 contigs.to.keep <- setdiff(ann[,1],evil.1)
 ann.NOevil <- ann[ann[,1] %in% contigs.to.keep & ann[,1] %in% contig.length$V1[contig.length$V2>=1000],]
 
-write.table(ann.NOevil,paste0(LIB,".annotation.filt.NOevilPooled.contigs1000.gff"),sep="\t",quote=F,col.names=F,row.names=F)
+write.table(ann.NOevil,paste0(anndir,LIB,".annotation.filt.NOevilPooled.contigs1000.gff"),sep="\t",quote=F,col.names=F,row.names=F)

@@ -14,9 +14,9 @@ gff.short <- gsub(";.*","",gff[,9])
 gff.short.2 <- gsub("ID=","",gff.short)
 gff.new <- cbind(gff,gff.short.2)
 
-prokka <- readAAStringSet("prokka.faa", format="fasta",use.names=TRUE)
+prokka <- readAAStringSet(paste0(ann_dir,"prokka.faa"), format="fasta",use.names=TRUE)
 ID <- gsub(" .*","",names(prokka))
 
 prokka.NOevil <- prokka[gsub(" .*","",names(prokka)) %in% gff.new[,10],]
 
-writeXStringSet(prokka.NOevil,paste0(LIB,".prokka.NOevil.faa"),append=FALSE,format="fasta")
+writeXStringSet(prokka.NOevil,paste0(ann_dir,LIB,".prokka.NOevil.faa"),append=FALSE,format="fasta")

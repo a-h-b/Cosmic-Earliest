@@ -18,9 +18,9 @@ gff.new <- cbind(gff,gff.short.2)
 contig.length <- read.delim(paste0(LIB,"/Analysis/mg.assembly.length.txt"),header=F,stringsAsFactors=F)
 gff.new.long <- gff.new[gff.new[,1] %in% contig.length$V1[contig.length$V2>=1000],]
 
-prokka <- readAAStringSet("prokka.faa", format="fasta",use.names=TRUE)
+prokka <- readAAStringSet(paste0(ann_dir,"prokka.faa"), format="fasta",use.names=TRUE)
 ID <- gsub(" .*","",names(prokka))
 
 prokka.NOevil <- prokka[gsub(" .*","",names(prokka)) %in% gff.new.long[,10],]
 
-writeXStringSet(prokka.NOevil,paste0(LIB,".prokka.NOevil.contigs1000.faa"),append=FALSE,format="fasta")
+writeXStringSet(prokka.NOevil,paste0(ann_dir,LIB,".prokka.NOevil.contigs1000.faa"),append=FALSE,format="fasta")
