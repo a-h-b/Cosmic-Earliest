@@ -15,10 +15,8 @@ In this part of the analysis, a pre-binning of sample contigs with contigs from 
 
 ### Part 3: [Annotation of genes with KEGG orthologous groups (KOs) and counting of reads per KO](KOanalysis.md)
 Here, HMMs are used to annotate the predicted genes with KOs. The number of reads mapping to each KO in each sample are then counted for later differential analysis.
-* [161114_filter_gff_Pooled_noconta_1000.R](161114_filter_gff_Pooled_noconta_1000.R)
 * [161114_filter_gff_Pooled_noconta_1.R](161114_filter_gff_Pooled_noconta_1.R)
 * [hmmscan_addBest2gff.pl](hmmscan_addBest2gff.pl)
-* [161129_filter_prokka_Pooled_noconta_1000.R](161129_filter_prokka_Pooled_noconta_1000.R)
 * [161129_filter_prokka_Pooled_noconta_1.R](161129_filter_prokka_Pooled_noconta_1.R)
 
 ### Part 4: [Binning of contigs into population-level genomes](binning.md)
