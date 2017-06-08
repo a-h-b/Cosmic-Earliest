@@ -4,9 +4,9 @@ In order to assign the taxonomy to the study sample reads, we use [Bowtie2](http
 
 First, the contigs from the contaminant control samples are indexed in Bowtie2:
 
-´´´
+```
 bowtie2-build Pooled_Contamination.mg.vizbin.filtered.fa Pooled_contaminationContigs
-´´´
+```
 Then the reads from each sample are mapped against these contigs:
 
 ```
