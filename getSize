@@ -1,0 +1,82 @@
+#!/usr/bin/perl
+
+#this script is an abbreviated version of getN50 from AMOS
+# adjustments made by Anna Heintz-Buschart, February 2017 
+#THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED
+#   WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES
+#   OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+#AMOS authors
+#Primary contact <amos-help@lists.sourceforge.net>
+#The following individuals have contributed to the source-base of AMOS,
+#listed alphabetically.
+#   Arthur Delcher
+#   Adam Phillippy
+#   Mihai Pop
+#   Mike Roberts
+#   Michael Schatz
+#   Dan Sommer
+#Parts of the Staden IO_lib software have been integrated into AMOS,
+the authors of the original software are:
+#   James Bonfield
+#   Simon Dear
+#   Rodger Staden
+#May 2005
+
+
+
+
+
+use lib "amos-3.1.0/lib";
+
+use TIGR::Foundation;
+use AMOS::ParseFasta;
+
+$usage = "Calculate contig statistics: number, average length and N50\nUSAGE: $0 <fasta> [genome size]\n";
+
+if ( $ARGV[0] eq '-h' ) {
+  die $usage;
+}
+
+my ($genomesize,$maxsize);
+if ( scalar(@ARGV) != 1 ) {
+    if ( scalar(@ARGV) != 2 ) {
+	die $usage;
+    } else {
+	$genomesize = $ARGV[1];
+    }
+} else {
+    $genomesize = 0;
+}
+$maxsize=0;
+$minsize=10000000000;
+
+$tf = new TIGR::Foundation;
+
+if (!defined $tf){
+    die ("Bad foundation\n");
+}
+
+open(IN, $ARGV[0]) || $tf->bail("Cannot open $ARGV[0]: $!\n");
+$fr = new AMOS::ParseFasta(\*IN);
+
+if (!defined $fr){
+    die ("Bad reader\n");
+}
+
+@lens = ();
+while (($head, $body) = $fr->getRecord()){
+    push @lens, length($body);
+}
+
+@lens = sort { $b <=> $a } @lens;
+
+$genomesize = 0;
+foreach $len (@lens) {
+	$genomesize += $len;
+	$maxsize=$len if $len > $maxsize;
+	$minsize=$len if $len < $minsize; 
+}
+
+print "$genomesize";
+print "\n";
+

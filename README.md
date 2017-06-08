@@ -37,6 +37,9 @@ To find which strains are common to several samples based on reads and potential
 
 ### Part 8: [Analysis of intra- and inter-population variability](pogenom.md)
 In this step, single nucleotide variants (SNVs) are used to examine the intra- and inter-population variability of the population-level genomes which were in common between different samples using Pogenom.
+* [Coverage_Bins.R](Coverage_Bins.R)
+* [getSize](getSize)
+* [Breadth.R](Breadth.R)
 
 ### Part 9: [mOTU analysis](mOTUs.md)
 To achieve a taxonomic overview, the relative abundances of metagenomic operational taxonomic units ([mOTUs](http://www.bork.embl.de/software/mOTU/)) were calculated from curated reads.
