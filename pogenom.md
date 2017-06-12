@@ -86,7 +86,7 @@ samtools index downsampled. ${BinName}.RG.merged.bam downsampled. ${BinName}.RG.
 freebayes -f cluster.${BinName}.fa -C 4 -p 1 --pooled-continuous --read-max-mismatch-fraction 0.05 --min-alternate-fraction 0.01 downsampled.${BinName}.RG.merged.bam | vcffilter -f "QUAL > 15" > downsampled.${BinName}.MERGED.index.vcf
 ```
 
-The resulting .vcf file for each group of bins is then used as input to [Pogenom](http://envgen.github.io/), which calculates the intra- and interpopulation diversities, amongst other useful data. Pogenom also takes as input the number of bins in the group, which can be found in the .vcf file (`$num`).
+The resulting .vcf file for each group of bins is then used as input to [Pogenom](https://github.com/EnvGen/POGENOM), which calculates the intra- and interpopulation diversities, amongst other useful data. Pogenom also takes as input the number of bins in the group, which can be found in the .vcf file (`$num`).
 
 ```
 num=$((`grep "#CHROM" downsampled.${BinName}.MERGED.index.vcf  | wc -w` - 9))

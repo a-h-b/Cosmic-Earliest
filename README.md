@@ -36,7 +36,7 @@ We use [PhyloPhlAn](https://huttenhower.sph.harvard.edu/phylophlan) to find the 
 To find which strains are common to several samples based on reads and potentially linked to reconstructed genomes, we use [StrainPhlAn](http://segatalab.cibio.unitn.it/tools/strainphlan/).
 
 ### Part 8: [Analysis of intra- and inter-population variability](pogenom.md)
-In this step, single nucleotide variants (SNVs) are used to examine the intra- and inter-population variability of the population-level genomes which were in common between different samples using Pogenom.
+In this step, single nucleotide variants (SNVs) are used to examine the intra- and inter-population variability of the population-level genomes which were in common between different samples using [Pogenom](https://github.com/EnvGen/POGENOM).
 * [Coverage_Bins.R](Coverage_Bins.R)
 * [getSize](getSize)
 * [Breadth.R](Breadth.R)
