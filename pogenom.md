@@ -5,7 +5,7 @@ For every sample and all bins with completeness > 65 %, we retrieve the coverage
 ```
 Rscript Coverage_Bins.R
 ```
-Using the [Mosaik](https://github.com/wanpinglee/MOSAIK) tool, we build a .dat file for each reference bin with at least 20x coverage that will be used to map against (for fastq use `-q`, for fasta use `-fr`).
+Using the [MOSAIK](https://github.com/wanpinglee/MOSAIK) tool, we build a .dat file for each reference bin with at least 20x coverage that will be used to map against (for fastq use `-q`, for fasta use `-fr`).
 
 ```
 MosaikBuild -fr cluster. ${BinName}.fa -oa cluster.${BinName}.ref.dat
@@ -23,7 +23,7 @@ For the mapping, we use MosaikAligner.
 MosaikAligner -in ${SampleName}.readsNotContaminated_Pooled.dat -out ${SampleName-BinName}.reads_aligned.dat -ia cluster.${BinName}.ref.dat -annpe /MOSAIK/src/networkFile/2.1.26.pe.100.0065.ann -annse / MOSAIK/src/networkFile/2.1.26.se.100.005.ann -hs 15 -mmp 0.05 -minp 0.95 -mhp 100 -act 20 -p 12
 ```
 
-Using [SamTools](http://samtools.sourceforge.net/), we sort the resulting bam files.
+Using [SAMtools](http://samtools.sourceforge.net/), we sort the resulting bam files.
 
 ```
 samtools sort ${SampleName-BinName}.reads_aligned.dat.bam ${SampleName-BinName}.sorted.bam
