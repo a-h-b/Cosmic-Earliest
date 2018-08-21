@@ -42,7 +42,7 @@ sort -n ${SampleName-BinName}.sample.txt | awk ' { a[i++]=$3; } END { x=int((i+1
 For calculating the genome breadth (how much of the reference sequence is covered by at least one read) per bin, we first calculate the number of zeros in our alignment.
 
 ```
-cat ${SampleName-BinName}.sample.txt | cut -f 3 | grep -c '0' >> ${SampleName-BinName}.zeros_sample.txt
+cat ${SampleName-BinName}.sample.txt | cut -f 3 | grep -c '0' -w >> ${SampleName-BinName}.zeros_sample.txt
 ```
 Then we calculate the genome size per bin using a short [perl script](getSize) which was adapted from getN50 in the [AMOS Assembler package](http://amos.sourceforge.net/wiki/index.php/AMOS).
 
