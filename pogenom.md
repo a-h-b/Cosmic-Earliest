@@ -1,4 +1,4 @@
-# Part 7: Analysis of intra- and inter-population variability
+# Part 8: Analysis of intra- and inter-population variability
 
 For every sample and all bins with completeness > 65 %, we retrieve the coverage information and generate a list of bins with at least 20x coverage in [R](Coverage_Bins.R). This script takes an input file PG.bins which is a list containing the bin names of all bins per sample with a high genomic completeness (i.e. all bin names starting with the letter 'P' or 'G'). 
 
