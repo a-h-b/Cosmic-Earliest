@@ -1,4 +1,4 @@
-# Part 8: mOTU analysis
+# Part 9: mOTU analysis
 
 In order to assign the taxonomy to the study sample reads, we use [Bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml) for each sample to first build an index and then map the original reads against the contigs obtained from the artefact control sample. Based on the sample reads that were not removed because of a putative artefactual origin, we then use the [mOTU tool](http://www.bork.embl.de/software/mOTU/) to assign the final taxonomy.
 
