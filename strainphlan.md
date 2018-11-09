@@ -1,4 +1,4 @@
-# Part 6: Linking strains and population-level genomes over different samples using SNV-patterns StrainPhlAn
+# Part 7: Linking strains and population-level genomes over different samples using SNV-patterns StrainPhlAn
 
 We analyzed the bins produced in [Part 4](binning.md) together with the processed reads using [StrainPhlAn](http://segatalab.cibio.unitn.it/tools/strainphlan/). 
 
